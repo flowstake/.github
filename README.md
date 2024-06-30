@@ -1,4 +1,3 @@
-```markdown
 # FlowStake
 
 FlowStake is an innovative platform designed to capture and record proof of physical activities as stakes, utilizing blockchain technology to ensure transparency and reliability. The platform supports activities such as running and cycling, and integrates various features to provide a comprehensive user experience.
@@ -86,4 +85,3 @@ For any inquiries or issues, please contact us at Flowstake@protonmail.com.
 ---
 
 Feel free to modify or expand this README as needed. Let me know if you need any additional sections or details!
-```
