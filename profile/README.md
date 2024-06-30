@@ -1,4 +1,4 @@
-## Flowstake - Activity Network Documention
+## Flowstake - Proof of Activity Network Documention
 
 <!--
 
