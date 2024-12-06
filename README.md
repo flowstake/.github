@@ -1,272 +1,190 @@
-# FlowStake
+# FlowStake Whitepaper
 
-A fitness platform that combines exercise with blockchain technology, using Proof of Activity as a Stake. FlowStake enables users to earn cryptocurrency rewards by completing fitness challenges.
+---
 
-## Features
+### **Abstract**
 
-### Core Features
-- **Wallet Integration**
-  - MetaMask support
-  - Secure transaction handling
-  - Real-time account updates
+FlowStake combines fitness with blockchain technology to create a revolutionary platform where users can "bet on themselves" through Proof of Activity staking. By tracking fitness goals and rewarding achievements with cryptocurrency and NFT accolades, FlowStake incentivizes healthy behaviors and fosters a global fitness community. Built on Ethereum and Base blockchain technology, the platform offers scalable, cost-efficient, and decentralized solutions for activity tracking, staking, and rewards.
 
-- **Strava Integration via Auth0**
-  - Secure OAuth2 authentication
-  - Activity tracking and verification
-  - Automated syncing
-  - Performance metrics
+---
 
-- **Challenge System**
-  - Individual challenges
-  - Group competitions
-  - Custom reward structures
-  - Difficulty levels
+### **Introduction**
 
-### User Experience
-- **Modern UI/UX**
-  - Responsive design
-  - Dark mode interface
-  - Interactive components
-  - Real-time updates
+FlowStake redefines personal fitness by blending decentralized finance (DeFi) with activity tracking. By leveraging blockchain technology, users can stake tokens on their fitness goals, earn cryptocurrency upon successful completion, and collect unique NFTs to celebrate their achievements. FlowStake transforms the way we approach health and fitness, motivating users with real-world rewards and connecting them with a community of like-minded individuals.
 
-- **Activity Tracking**
-  - Distance tracking
-  - Time monitoring
-  - Performance analytics
-  - Achievement system
+---
 
-- **Social Features**
-  - Activity sharing
-  - Community challenges
-  - Global leaderboard
-  - Team competitions
+### **Vision**
 
-## Quick Start
+FlowStake aims to inspire individuals worldwide to achieve their fitness goals by introducing blockchain-based incentives. The platform seeks to:
+- Encourage healthier lifestyles through gamification and rewards.
+- Build a global community of fitness enthusiasts.
+- Provide users with tools to track, validate, and share their fitness journeys transparently.
 
-```bash
-# Install dependencies
-npm install
+---
 
-# Set up environment variables
-cp .env.example .env
+### **Key Features**
 
-# Start development server
-npm run dev
+#### **1. Bet on Yourself**
+- Users stake FlowStake Tokens (FST) or other supported cryptocurrencies (e.g., ETH, USDC) to commit to fitness challenges.
+- Rewards are earned only upon successful completion, validated through activity tracking integrations.
 
-# Build for production
-npm run build
+#### **2. Proof of Activity**
+- Activity verification through integrations with platforms like Strava.
+- Tracks metrics such as distance, duration, heart rate, and pace.
+- Secure, tamper-proof validation using blockchain and decentralized oracles.
 
-# Deploy contracts
-npm run deploy
-```
+#### **3. NFT Accolades**
+- Earn unique, collectible NFTs for completing challenges, achieving milestones, or topping leaderboards.
+- NFTs are minted on the blockchain and can be displayed, traded, or utilized for platform perks.
 
-## Environment Setup
+#### **4. Community Challenges**
+- Users can participate in group challenges and stake collectively.
+- Social features include activity sharing, leaderboards, and team competitions.
 
-Create `.env` file with the following variables:
+#### **5. Decentralized and Transparent**
+- Smart contracts ensure secure staking and automatic reward distribution.
+- Immutable records on the blockchain provide full transparency.
 
-```env
-# Supabase
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_key
+---
 
-# Base Chain
-PRIVATE_KEY=your_private_key
-BASE_RPC_URL=https://mainnet.base.org
-ETHERSCAN_API_KEY=your_etherscan_key
+### **FST Token**
 
-# Auth0
-VITE_AUTH0_DOMAIN=your_auth0_domain
-VITE_AUTH0_CLIENT_ID=your_auth0_client_id
-VITE_AUTH0_CLIENT_SECRET=your_auth0_client_secret
-VITE_AUTH0_AUDIENCE=your_auth0_audience
+#### **Token Overview**
+The FlowStake Token (FST) powers the platform's economy. It is used for staking, rewards, and governance.
 
-# Strava (via Auth0)
-VITE_STRAVA_CLIENT_ID=your_strava_client_id
-VITE_STRAVA_CLIENT_SECRET=your_strava_client_secret
-VITE_STRAVA_REDIRECT_URI=your_redirect_uri
-```
+- **Total Supply**: 1,000,000,000 FST
+- **Network**: Base Blockchain
+- **Contract Address**: [0xf80d6EC0AF3abe8AFb1C83EC873C8942CC83B24a](https://basescan.org/token/0xf80d6EC0AF3abe8AFb1C83EC873C8942CC83B24a)
 
-## Technology Stack
+#### **Utility**
+1. **Staking**: Commit FST to fitness challenges.
+2. **Rewards**: Earn FST for completing verified activities.
+3. **Discounts**: Reduce platform fees by using FST.
+4. **Governance**: Vote on platform upgrades and new features.
 
-### Frontend
-- **React 18.3**
-  - TypeScript
-  - Vite
-  - React Router
-  - React Query
-  - Zustand
+---
 
-- **Authentication**
-  - Auth0 integration
-  - Wallet signatures
-  - Strava OAuth2
+### **NFT Accolades**
 
-- **Styling**
-  - Tailwind CSS
-  - Custom animations
-  - Responsive layouts
-  - Dark mode support
+#### **Purpose**
+NFT accolades are digital rewards that users earn for achieving specific fitness milestones or completing challenges.
 
-- **Web3 Integration**
-  - ethers.js
-  - MetaMask connectivity
-  - Smart contract interaction
+#### **Features**
+1. **Unique Metadata**: Each NFT contains details of the achievement, such as activity type, distance, and completion date.
+2. **Display & Trade**: Showcase NFTs on user profiles or trade them in the FlowStake marketplace.
+3. **Unlock Perks**: Use NFTs to access exclusive platform features, discounts, or community privileges.
 
-### Backend
-- **Database**
-  - Supabase
-  - PostgreSQL
-  - Row Level Security
+#### **Standards**
+- **ERC721**: Built on OpenZeppelin’s secure NFT implementation.
+- **Metadata**: Activity-specific details embedded in each NFT.
 
-- **Authentication**
-  - Auth0 Rules System
-  - JWT tokens
-  - Wallet signatures
-  - OAuth2 (Strava)
+---
 
-### Smart Contracts
-- **Solidity**
-  - OpenZeppelin
-  - Hardhat
-  - Base Chain
+### **Challenge System**
 
-## Project Structure
+FlowStake provides a comprehensive system for both individual and group challenges:
 
-```
-flowstake/
-├── contracts/                # Smart contracts
-│   ├── FlowstakeChallenge.sol
-│   └── FSTCrowdsale.sol
-├── src/
-│   ├── components/          # React components
-│   │   ├── auth/           # Authentication components
-│   │   ├── auth0/          # Auth0 specific components
-│   │   ├── presale/        # Presale components
-│   │   └── profile/        # Profile components
-│   ├── config/             # Configuration files
-│   │   └── auth0/          # Auth0 rules and settings
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utility functions
-│   │   ├── auth0/          # Auth0 utilities
-│   │   ├── supabase/       # Supabase client & helpers
-│   │   └── web3/           # Web3 utilities
-│   ├── pages/              # Route components
-│   ├── providers/          # Context providers
-│   ├── stores/             # State management
-│   └── types/              # TypeScript types
-├── api/                    # Backend API
-│   ├── routes/            # API routes
-│   ├── middleware/        # Express middleware
-│   └── services/          # Business logic
-└── prisma/                # Database schema
-```
+#### **1. Personal Challenges**
+- Users set personal fitness goals, such as running a marathon or cycling a specific distance.
+- Stake tokens to commit, with rewards unlocked upon successful completion.
 
-## Smart Contracts
+#### **2. Group Challenges**
+- Join team-based events or community competitions.
+- Stake collaboratively for larger rewards and collective accountability.
 
-### FST Token
-- **Network**: Base Chain
-- **Address**: `0xf80d6EC0AF3abe8AFb1C83EC873C8942CC83B24a`
-- **Supply**: 1,000,000,000 FST
-- [View on Basescan](https://basescan.org/token/0xf80d6EC0AF3abe8AFb1C83EC873C8942CC83B24a)
+#### **3. Custom Rewards**
+- Tailor rewards based on difficulty, duration, and type of activity.
+- Earn bonus NFTs for high-difficulty challenges.
 
-### Presale Contract
-- **Network**: Base Chain
-- **Rate**: 1 ETH = 1000 FST
-- **Soft Cap**: 1000 ETH
-- **Min Purchase**: 0.01 ETH
-- **Max Purchase**: 100 ETH
-- **Duration**: 30 days
+#### **4. Difficulty Levels**
+- Beginner: Short distances, low stakes.
+- Intermediate: Moderate goals with higher rewards.
+- Advanced: High-intensity challenges with premium rewards.
 
-## Auth0 Integration
+---
 
-See [Auth0 Documentation](docs/auth0/README.md) for detailed setup and configuration.
+### **Technology Stack**
 
-### Key Features
-- Secure Strava OAuth2 authentication
-- Automated token refresh
-- Activity synchronization
-- User metadata management
+#### **Blockchain**
+- **Base Blockchain**: Used for scalability, low fees, and seamless transaction processing.
+- **Smart Contracts**: Developed with Solidity and OpenZeppelin standards for secure, efficient staking and rewards.
 
-### Rules System
-1. Strava Connection
-2. Activity Sync
-3. Token Refresh
+#### **Integration**
+- **Strava**: Sync fitness activities via OAuth2 for real-time tracking and validation.
+- **Web3**: Wallet integration through MetaMask and ethers.js for seamless user interaction.
 
-## Development
+#### **Frontend**
+- React framework with modern UI/UX design.
+- Tailwind CSS for styling and responsiveness.
 
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-- MetaMask wallet
-- Auth0 account
-- Strava API access
+#### **Backend**
+- Supabase-powered database for scalable data storage and row-level security.
+- API integration with fitness platforms and blockchain services.
 
-### Running Locally
+---
 
-1. Install dependencies:
-```bash
-npm install
-```
+### **Tokenomics**
 
-2. Configure environment:
-```bash
-cp .env.example .env
-# Update .env with your credentials
-```
+#### **Inflationary Rewards**
+- Users earn FST tokens through verified activity completion.
+- Early adopters benefit from higher reward rates, encouraging platform adoption.
 
-3. Start development server:
-```bash
-npm run dev
-```
+#### **Burn Mechanisms**
+- Tokens are burned during:
+  - Staking and challenge fees.
+  - NFT minting and trading.
 
-### Testing
+#### **Revenue Streams**
+1. **Platform Fees**: Collected on staking, betting, and NFT marketplace transactions.
+2. **Premium Features**: Advanced analytics, exclusive challenges, and leaderboard access.
+3. **Advertising**: Sponsored challenges and branded NFT rewards.
 
-```bash
-# Run tests
-npm test
+#### **Airdrops**
+- Initial FST distributions to early participants, beta testers, and community contributors.
 
-# Run tests with coverage
-npm run test:coverage
-```
+---
 
-### Deployment
+### **Roadmap**
 
-1. Build the application:
-```bash
-npm run build
-```
+#### **Q4 2024**
+- Launch of FlowStake beta platform.
+- Integration with Strava and Base Blockchain.
 
-2. Deploy to production:
-```bash
-npm run deploy:prod
-```
+#### **Q1 2025**
+- Release of iOS and Android apps.
+- Launch of NFT marketplace.
 
-## Security
+#### **Q2 2025**
+- Community events and partnerships with fitness organizations.
+- Expansion of staking options (USDC, BTC).
 
-- Smart contracts are audited
-- Auth0 handles authentication
-- Secure wallet connections
-- JWT for API authentication
-- Rate limiting implemented
-- Row Level Security with Supabase
+#### **Q3 2025**
+- Introduction of decentralized governance.
+- Integration of wearable technology for live activity tracking.
 
-## Contributing
+---
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### **Security**
 
-## Connect With Us
+- **Audited Contracts**: All smart contracts undergo thorough audits for vulnerabilities.
+- **Secure Transactions**: Wallet interactions are encrypted, and sensitive data is protected.
+- **Immutable Records**: Blockchain ensures data integrity and transparency.
 
-- [Website](https://flowstake.com)
-- [Twitter](https://x.com/flowstake)
-- [YouTube](https://www.youtube.com/@Flowstake1)
-- [TikTok](https://tiktok.com/@flowstake1)
-- [Instagram](https://www.instagram.com/flowstake)
-- [GitHub](https://github.com/flowstake)
+---
 
-## License
+### **Conclusion**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+FlowStake transforms fitness by merging blockchain technology with activity tracking, creating a platform where users can bet on themselves and earn real rewards for their achievements. With FST tokens, NFT accolades, and a vibrant community, FlowStake is poised to become a leader in the fitness-tech revolution.
+
+---
+
+### **Contact and Resources**
+
+- **Website**: [FlowStake.com](https://flowstake.com)  
+- **Token on Base**: [FST Token](https://basescan.org/token/0xf80d6EC0AF3abe8AFb1C83EC873C8942CC83B24a)  
+- **Twitter**: [@FlowStake](https://x.com/flowstake)  
+- **YouTube**: [FlowStake Channel](https://www.youtube.com/@Flowstake1)  
+- **GitHub**: [FlowStake Repository](https://github.com/flowstake)  
+
+---
