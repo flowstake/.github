@@ -1,87 +1,272 @@
 # FlowStake
 
-FlowStake is an innovative platform designed to capture and record proof of physical activities as stakes, utilizing blockchain technology to ensure transparency and reliability. The platform supports activities such as running and cycling, and integrates various features to provide a comprehensive user experience.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## Introduction
-
-FlowStake aims to revolutionize how physical activities are tracked and verified. By using a distributed ledger, we ensure that each activity is recorded securely and transparently. Our platform provides a social network-like experience where users can interact, compete, and attest to each other's activities.
+A fitness platform that combines exercise with blockchain technology, using Proof of Activity as a Stake. FlowStake enables users to earn cryptocurrency rewards by completing fitness challenges.
 
 ## Features
 
-- **Activity Tracking**: GPS and heartbeat data tracking for running and cycling.
-- **Attestation**: Peer-to-peer attestation and photo/video verification of activities.
-- **Social Interaction**: Activity feed, friend interactions, and collective attestations.
-- **Blockchain Integration**: Permanent records stored on Hedera Hashgraph and Ethereum smart contracts for self-sports betting.
-- **Account Management**: Secure login and account management using web3auth.io.
-- **Progressive Web App**: Live data capture and mobile compatibility for iOS and Android.
+### Core Features
+- **Wallet Integration**
+  - MetaMask support
+  - Secure transaction handling
+  - Real-time account updates
 
-## Technologies Used
+- **Strava Integration via Auth0**
+  - Secure OAuth2 authentication
+  - Activity tracking and verification
+  - Automated syncing
+  - Performance metrics
 
-- **Frontend**: React Native with Expo SDK 46
-- **Backend**: Firebase for data storage
-- **Blockchain**: Hedera Hashgraph and Ethereum smart contracts
-- **Authentication**: web3auth.io
-- **Hosting**: IPFS (InterPlanetary File System)
-- **Miscellaneous**: Computer vision for activity identification
+- **Challenge System**
+  - Individual challenges
+  - Group competitions
+  - Custom reward structures
+  - Difficulty levels
 
-## Installation
+### User Experience
+- **Modern UI/UX**
+  - Responsive design
+  - Dark mode interface
+  - Interactive components
+  - Real-time updates
 
-To get started with FlowStake, follow these steps:
+- **Activity Tracking**
+  - Distance tracking
+  - Time monitoring
+  - Performance analytics
+  - Achievement system
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/flowstake.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd flowstake/expo
-    ```
-3. Install dependencies:
-    ```sh
-    npm install
-    ```
-4. Start the development server:
-    ```sh
-    expo start
-    ```
+- **Social Features**
+  - Activity sharing
+  - Community challenges
+  - Global leaderboard
+  - Team competitions
 
-## Usage
+## Quick Start
 
-1. Sign up or log in using web3auth.io.
-2. Start tracking your activities using the GPS and heartbeat data features.
-3. Verify activities through photo/video attestation and peer-to-peer attestation.
-4. Interact with friends through the activity feed and participate in self-sports betting using Ethereum smart contracts.
+```bash
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Deploy contracts
+npm run deploy
+```
+
+## Environment Setup
+
+Create `.env` file with the following variables:
+
+```env
+# Supabase
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_key
+
+# Base Chain
+PRIVATE_KEY=your_private_key
+BASE_RPC_URL=https://mainnet.base.org
+ETHERSCAN_API_KEY=your_etherscan_key
+
+# Auth0
+VITE_AUTH0_DOMAIN=your_auth0_domain
+VITE_AUTH0_CLIENT_ID=your_auth0_client_id
+VITE_AUTH0_CLIENT_SECRET=your_auth0_client_secret
+VITE_AUTH0_AUDIENCE=your_auth0_audience
+
+# Strava (via Auth0)
+VITE_STRAVA_CLIENT_ID=your_strava_client_id
+VITE_STRAVA_CLIENT_SECRET=your_strava_client_secret
+VITE_STRAVA_REDIRECT_URI=your_redirect_uri
+```
+
+## Technology Stack
+
+### Frontend
+- **React 18.3**
+  - TypeScript
+  - Vite
+  - React Router
+  - React Query
+  - Zustand
+
+- **Authentication**
+  - Auth0 integration
+  - Wallet signatures
+  - Strava OAuth2
+
+- **Styling**
+  - Tailwind CSS
+  - Custom animations
+  - Responsive layouts
+  - Dark mode support
+
+- **Web3 Integration**
+  - ethers.js
+  - MetaMask connectivity
+  - Smart contract interaction
+
+### Backend
+- **Database**
+  - Supabase
+  - PostgreSQL
+  - Row Level Security
+
+- **Authentication**
+  - Auth0 Rules System
+  - JWT tokens
+  - Wallet signatures
+  - OAuth2 (Strava)
+
+### Smart Contracts
+- **Solidity**
+  - OpenZeppelin
+  - Hardhat
+  - Base Chain
+
+## Project Structure
+
+```
+flowstake/
+├── contracts/                # Smart contracts
+│   ├── FlowstakeChallenge.sol
+│   └── FSTCrowdsale.sol
+├── src/
+│   ├── components/          # React components
+│   │   ├── auth/           # Authentication components
+│   │   ├── auth0/          # Auth0 specific components
+│   │   ├── presale/        # Presale components
+│   │   └── profile/        # Profile components
+│   ├── config/             # Configuration files
+│   │   └── auth0/          # Auth0 rules and settings
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility functions
+│   │   ├── auth0/          # Auth0 utilities
+│   │   ├── supabase/       # Supabase client & helpers
+│   │   └── web3/           # Web3 utilities
+│   ├── pages/              # Route components
+│   ├── providers/          # Context providers
+│   ├── stores/             # State management
+│   └── types/              # TypeScript types
+├── api/                    # Backend API
+│   ├── routes/            # API routes
+│   ├── middleware/        # Express middleware
+│   └── services/          # Business logic
+└── prisma/                # Database schema
+```
+
+## Smart Contracts
+
+### FST Token
+- **Network**: Base Chain
+- **Address**: `0xf80d6EC0AF3abe8AFb1C83EC873C8942CC83B24a`
+- **Supply**: 1,000,000,000 FST
+- [View on Basescan](https://basescan.org/token/0xf80d6EC0AF3abe8AFb1C83EC873C8942CC83B24a)
+
+### Presale Contract
+- **Network**: Base Chain
+- **Rate**: 1 ETH = 1000 FST
+- **Soft Cap**: 1000 ETH
+- **Min Purchase**: 0.01 ETH
+- **Max Purchase**: 100 ETH
+- **Duration**: 30 days
+
+## Auth0 Integration
+
+See [Auth0 Documentation](docs/auth0/README.md) for detailed setup and configuration.
+
+### Key Features
+- Secure Strava OAuth2 authentication
+- Automated token refresh
+- Activity synchronization
+- User metadata management
+
+### Rules System
+1. Strava Connection
+2. Activity Sync
+3. Token Refresh
+
+## Development
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- MetaMask wallet
+- Auth0 account
+- Strava API access
+
+### Running Locally
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Configure environment:
+```bash
+cp .env.example .env
+# Update .env with your credentials
+```
+
+3. Start development server:
+```bash
+npm run dev
+```
+
+### Testing
+
+```bash
+# Run tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Deployment
+
+1. Build the application:
+```bash
+npm run build
+```
+
+2. Deploy to production:
+```bash
+npm run deploy:prod
+```
+
+## Security
+
+- Smart contracts are audited
+- Auth0 handles authentication
+- Secure wallet connections
+- JWT for API authentication
+- Rate limiting implemented
+- Row Level Security with Supabase
 
 ## Contributing
 
-We welcome contributions from the community. To contribute:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some feature'`).
-5. Push to the branch (`git push origin feature/your-feature`).
-6. Open a pull request.
+## Connect With Us
+
+- [Website](https://flowstake.com)
+- [Twitter](https://x.com/flowstake)
+- [YouTube](https://www.youtube.com/@Flowstake1)
+- [TikTok](https://tiktok.com/@flowstake1)
+- [Instagram](https://www.instagram.com/flowstake)
+- [GitHub](https://github.com/flowstake)
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries or issues, please contact us at Flowstake@protonmail.com.
-
----
-
-Feel free to modify or expand this README as needed. Let me know if you need any additional sections or details!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
