@@ -179,7 +179,7 @@ flowstake/
 
 ## Auth0 Integration
 
-See [Auth0 Documentation](docs/auth0/README.md) for detailed setup and configuration.
+See [Auth0 Documentation](profile/docs/auth0/README.md) for detailed setup and configuration.
 
 ### Key Features
 - Secure Strava OAuth2 authentication
